@@ -1,7 +1,8 @@
-package com.udacity.stockhawk.ui;
+package com.udacity.stockhawkk.ui;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,9 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.udacity.stockhawk.R;
-import com.udacity.stockhawk.data.Contract;
-import com.udacity.stockhawk.data.PrefUtils;
+import com.udacity.stockhawkk.R;
+import com.udacity.stockhawkk.data.Contract;
+import com.udacity.stockhawkk.data.PrefUtils;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -40,6 +41,8 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
         percentageFormat.setMaximumFractionDigits(2);
         percentageFormat.setMinimumFractionDigits(2);
         percentageFormat.setPositivePrefix("+");
+
+
     }
 
     void setCursor(Cursor cursor) {
@@ -129,7 +132,10 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
             int adapterPosition = getAdapterPosition();
             cursor.moveToPosition(adapterPosition);
             int symbolColumn = cursor.getColumnIndex(Contract.Quote.COLUMN_SYMBOL);
-            clickHandler.onClick(cursor.getString(symbolColumn));
+            //clickHandler.onClick(cursor.getString(symbolColumn));
+            Intent intent = new Intent(context,StockDetailActivity.class);
+            intent.putExtra("symbol",cursor.getString(symbolColumn));
+            context.startActivity(intent);
 
         }
 

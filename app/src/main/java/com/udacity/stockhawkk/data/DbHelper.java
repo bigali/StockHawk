@@ -1,10 +1,10 @@
-package com.udacity.stockhawk.data;
+package com.udacity.stockhawkk.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.udacity.stockhawk.data.Contract.Quote;
+import com.udacity.stockhawkk.data.Contract.Quote;
 
 
 class DbHelper extends SQLiteOpenHelper {
