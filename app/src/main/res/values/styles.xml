@@ -5,6 +5,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="DetailActivityTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+           <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+           <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
     <style name="PercentChangeTextStyle">
         <item name="android:textSize">20sp</item>
@@ -19,5 +25,12 @@
     <style name="StockSymbolTextStyle">
         <item name="android:textSize">25sp</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="CollapsingTextAppearance" parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+    <style name="CollapsingTextAppearance.Inverse" >
+        <item name="android:textSize">30sp</item>
+    </style>
+    <style name="ToolBarWithNavigationBack">
+        <item name="navigationIcon">@drawable/abc_ic_ab_back_material</item>
     </style>
 </resources>

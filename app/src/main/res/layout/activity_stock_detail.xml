@@ -18,7 +18,7 @@
             android:id="@+id/toolbar_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="120dp"
+            android:minHeight="200dp"
             app:elevation="4dp"
             app:layout_scrollFlags="scroll|enterAlways">
 
@@ -48,7 +48,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/symbol"
-            app:srcCompat="@drawable/z" />
+            app:srcCompat="@drawable/z"
+            android:contentDescription="@string/chart_description"
+            />
     </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>
 

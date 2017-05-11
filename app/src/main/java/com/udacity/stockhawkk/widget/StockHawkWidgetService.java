@@ -109,10 +109,8 @@ public class StockHawkWidgetService extends RemoteViewsService {
             float rawAbsoluteChange = mCursor.getFloat(Contract.Quote.POSITION_ABSOLUTE_CHANGE);
             float percentageChange = mCursor.getFloat(Contract.Quote.POSITION_PERCENTAGE_CHANGE);
 
-            //inflate widget_list_item item as a RemoteViews
             RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_list_item);
 
-            //set symbol, price and change
             rv.setTextViewText(R.id.symbol, symbol);
             rv.setTextViewText(R.id.price, price);
             if (rawAbsoluteChange > 0) {
@@ -130,7 +128,6 @@ public class StockHawkWidgetService extends RemoteViewsService {
             } else {
                 rv.setTextViewText(R.id.change, percentage);
             }
-            //set a fill-intent
             Bundle extras = new Bundle();
             extras.putInt(StockHawkWidgetProvider.EXTRA_POSITION, position);
             extras.putString(StockHawkWidgetProvider.EXTRA_SYMBOL, symbol);

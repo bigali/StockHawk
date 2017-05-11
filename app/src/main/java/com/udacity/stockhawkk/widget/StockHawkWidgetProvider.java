@@ -31,10 +31,10 @@ public class StockHawkWidgetProvider extends AppWidgetProvider {
         if (action.equals(ACTION_OPEN_STOCK_HAWK)) {
             String stockSymbol = intent.getStringExtra(EXTRA_SYMBOL);
             Intent mainAppIntent = new Intent(context, StockDetailActivity.class);
-            mainAppIntent.putExtra("symbole", stockSymbol);
+            mainAppIntent.putExtra("symbol", stockSymbol);
             mainAppIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(context); //new
-            taskStackBuilder.addParentStack(MainActivity.class);//new
+            TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(context);
+            taskStackBuilder.addParentStack(MainActivity.class);
             taskStackBuilder.addNextIntent(mainAppIntent);
             context.startActivity(mainAppIntent);
         }
@@ -46,17 +46,14 @@ public class StockHawkWidgetProvider extends AppWidgetProvider {
 
         for (int i = 0; i < appWidgetIds.length; i++) {
             Intent intent = new Intent(context, StockHawkWidgetService.class);
-            // Add the app widget ID to the intent extras.
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetIds[i]);
             intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
 
-            // Instantiate the RemoteViews object for the app widget layout.
             RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_stock_hawk);
 
             rv.setRemoteAdapter(R.id.widget_list_view, intent);
             rv.setEmptyView(R.id.widget_list_view, R.id.widget_empty_view);
 
-            //set the action for the intent
             Intent stockIntent = new Intent(context, StockHawkWidgetProvider.class);
             stockIntent.setAction(ACTION_OPEN_STOCK_HAWK);
             stockIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetIds[i]);
