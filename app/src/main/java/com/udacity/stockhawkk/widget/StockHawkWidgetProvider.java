@@ -20,9 +20,9 @@ import com.udacity.stockhawkk.ui.StockDetailActivity;
 
 public class StockHawkWidgetProvider extends AppWidgetProvider {
 
-    public static final String EXTRA_POSITION = "com.udacity.stockhawk.widget.extra_position";
-    public static final String EXTRA_SYMBOL = "com.udacity.stockhawk.widget.extra_symbol";
-    public static final String ACTION_OPEN_STOCK_HAWK = "com.udacity.stockhawk.widget.open_stock_hawk";
+    public static final String EXTRA_POSITION = "com.udacity.stockhawkk.widget.extra_position";
+    public static final String EXTRA_SYMBOL = "com.udacity.stockhawkk.widget.extra_symbol";
+    public static final String ACTION_OPEN_STOCK_HAWK = "com.udacity.stockhawkk.widget.open_stock_hawk";
 
     @Override
     public void onReceive(Context context, Intent intent) {
