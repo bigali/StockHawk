@@ -26,7 +26,6 @@
                 android:id="@+id/symbol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="symbol"
                 android:textSize="30sp" />
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
@@ -43,14 +42,18 @@
         android:paddingStart="8dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <ProgressBar
+            android:id="@+id/progress"
+            android:visibility="visible"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
         <ImageView
             android:id="@+id/graph"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/symbol"
-            app:srcCompat="@drawable/z"
             android:contentDescription="@string/chart_description"
             />
+
     </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>
 
